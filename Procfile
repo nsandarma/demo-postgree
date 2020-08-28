@@ -1,1 +1,1 @@
-web: gunicorn app:CRUDSuper
+web: gunicorn CRUDSuper:CRUDSuper
