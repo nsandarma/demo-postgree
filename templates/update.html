@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update sUPER</h1>
+    <div class="form" >
+        <form action="/update/{{superh.id}}" method="POST">
+        <label>NOMBRE</label>
+        <input type="text" name="nombre" id="nombre" value="{{superh.nombre}}">
+        <label>Sexo</label>
+        <input type="text" name="sexo" id="sexo" value="{{superh.sexo}}">
+        <input type="submit" value="Update">    
+    </form>
+    </div>
+</body>
+</html>
