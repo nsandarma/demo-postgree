@@ -16,6 +16,7 @@ class Siswa(db.Model):
     def __repr__(self) -> str:
         return f'<nama {self.nama}>'
 
+db.init_app()
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
