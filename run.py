@@ -3,9 +3,6 @@ from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-database = 'postgres://tsbmlqwxkzbkoh:32f18c20a20469a1c96fef9168018ad84786825afc39ec57e08148497682ebb5@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d1ru9t99pvgmmb'
-sqlite = 'sqlite:///test.db'
-secret = 'fasisme123'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
