@@ -1,8 +1,10 @@
+from enum import unique
 from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 import os
 
 database = 'postgres://tsbmlqwxkzbkoh:32f18c20a20469a1c96fef9168018ad84786825afc39ec57e08148497682ebb5@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d1ru9t99pvgmmb'
+sqlite = 'sqlite:///test.db'
 secret = 'fasisme123'
 
 app = Flask(__name__)
@@ -11,8 +13,8 @@ app.config['SECRET_KEY'] = secret
 db = SQLAlchemy(app)
 
 class Siswa(db.Model):
-    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
-    nama = db.Column(db.String(50),nullable=False)
+    id = db.Column(db.Integer,primary_key=True)
+    nama = db.Column(db.String,unique=True)
 
     def __repr__(self) -> str:
         return f'<nama {self.nama}>'
