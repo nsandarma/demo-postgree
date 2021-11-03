@@ -14,9 +14,6 @@ class Siswa(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     nama = db.Column(db.String,unique=True)
 
-    def __repr__(self) -> str:
-        return f'<nama {self.nama}>'
-
 db.init_app()
 @app.route('/',methods=['GET','POST'])
 def index():
