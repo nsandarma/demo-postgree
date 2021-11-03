@@ -2,11 +2,12 @@ from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-from sqlalchemy.orm import exc
+database = 'postgres://tsbmlqwxkzbkoh:32f18c20a20469a1c96fef9168018ad84786825afc39ec57e08148497682ebb5@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d1ru9t99pvgmmb'
+secret = 'fasisme123'
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = database
+app.config['SECRET_KEY'] = secret
 db = SQLAlchemy(app)
 
 class Siswa(db.Model):
