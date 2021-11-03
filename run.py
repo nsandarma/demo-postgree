@@ -10,6 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 class Siswa(db.Model):
+    __tablename__ = 'siswa'
     id = db.Column(db.Integer,primary_key=True)
     nama = db.Column(db.String,unique=True)
 
